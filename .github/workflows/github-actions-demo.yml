@@ -44,3 +44,5 @@ jobs:
         env:
           MATRIX_CONTEXT: ${{ toJson(matrix) }}
         run: echo "$MATRIX_CONTEXT"
+      - name: Parse Event Data
+        run: jq . ${{ github.event_path }}
